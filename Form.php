@@ -3,7 +3,7 @@
 <head>
 	<title></title>
 	<style>
-body{background-image:url(Images/poBtG9.jpg);}
+body{background-image:url(Images/Oralando5.jpg);}
 
 </style>
 <link rel="stylesheet" type="text/css" href="Css/design.css">
@@ -100,7 +100,7 @@ body{background-image:url(Images/poBtG9.jpg);}
 						
 					</div>
 				</div>	
-			<a href="form.php" id="hyp1">
+			<a href="Form.php" id="hyp1">
 				<div class="dropdown">
 					<font id="f1">&nbsp&nbsp<span>ONLINE BOOKING</span>&nbsp&nbsp</font></a>
 				</div>	
@@ -127,34 +127,50 @@ body{background-image:url(Images/poBtG9.jpg);}
 
 	<form action="<?php $_SERVER['PHP_SELF']?>" method="post">
 	<table>
-		<tr>
-			<td>First Name</td>
-			<td><input type="text" name="fn"></input></td>
-		</tr>
-		<tr>
-			<td>Last Name</td>
-			<td><input type="text" name="ln"></input></td>
-		</tr>
-		<tr>
-			<td>Age</td>
-			<td><input type="number" name="age"></input></td>
-		</tr>
-		<tr>
-			<td>Gender</td>
-			<td><input type="radio" name="gen">Male</input></br>
-			<input type="radio" name="gen">Female</input></td>
-		</tr>
-		<tr>
-			<td>Contact Number</td>
-			<td><input type="number" name="cn"></input></td>
-		</tr>
-		<tr>
-			<td>Room Type</td>
-			<td><input type="radio" name="rt">AC</input></br>
-			<input type="radio" name="rt">Non AC</input></td>
-		</tr>
+	<tr>
+		</br>
+		</br>
+	<td width="400" valign="top">
+		<a href="Form.php"><font color="white">New Online Booking</font></a></br>
+		<a href="Preview.php"><font color="white">Preview Existing Bookings</font></a>
+	</td>
+	<td>
+		<table align="center">
+			<tr>
+				<td height="50"><font color="white">First Name</font></td>
+				<td height="50"><input type="text" name="fn"></input></td>
+			</tr>
+			<tr>
+				<td height="50"><font color="white">Last Name</font></td>
+				<td height="50"><input type="text" name="ln"></input></td>
+			</tr>
+			<tr>
+				<td height="50"><font color="white">Age</font></td>
+				<td height="50"><input type="number" name="age"></input></td>
+			</tr>
+			<tr>
+				<td height="50"><font color="white">Gender</font></td>
+				<td height="50"><input type="radio" name="gen"><font color="white"><font color="white">Male</font></input></br>
+				<input type="radio" name="gen"><font color="white">Female</font></input></td>
+			</tr>
+			<tr>
+				<td height="50"><font color="white">Contact Number</font></td>
+				<td height="50"><input type="number" name="cn"></input></td>
+			</tr>
+			<tr>
+				<td height="50"><font color="white">Room Type</font></td>
+				<td height="50"><input type="radio" name="rt"><font color="white">AC</font></input></br>
+				<input type="radio" name="rt"><font color="white">Non AC</font></input></td>
+			</tr>
+			<tr>
+				<td height="50"></td>
+				<td height="50"><input type="submit" name="file"></td>
+			</tr>
+		</table>
+	</td>
+	<td></td>
+	</tr>
 	</table>
-	<input type="submit" name="file">
 	</form>
 
 </body>

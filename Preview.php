@@ -1,14 +1,17 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>About us</title>
-<style>
+	<title></title>
+	<style>
 body{background-image:url(Images/Oralando5.jpg);}
+
 </style>
 <link rel="stylesheet" type="text/css" href="Css/design.css">
 <link rel="stylesheet" type="text/css" href="Css/Edit.css">
 </head>
+
 <body>
-<table>
+	<table>
 		<tr>
 			<td>
 				<img src="Images/marina_logo.png" id="bg0">
@@ -102,26 +105,69 @@ body{background-image:url(Images/Oralando5.jpg);}
 					<font id="f1">&nbsp&nbsp<span>ONLINE BOOKING</span>&nbsp&nbsp</font></a>
 				</div>	
 			</td>
-			<td>
-				
+			<td>	
 				<img src="Images/Singapore-city-skyline destination-banner.jpg" id="bg1">
-				
 			</td>
 		</tr>
 	</table>
-<h3><b>We obey the customers under the good Administration.</b></h3>
-<h3><b>Our Mission is Custormer satisfaction is our happiness.</b></h3>
 
-<table align="center">
-<tr>
-<td>
-<img src="Images/hendrick-auto-featured-customerservice09.jpg" height="300" width="600">
-</td>
-<td>
-<img src="Images/receptionist-helping-customer.png" height="300" width="600">
-</td>
-</tr>
-</table>
-<p><h3><b>we are founded as TTCR(Tri Tree Club Rest) in 1994. But our services must be a neat and tidy. Every years ,we participate for island wide best hotel and restuarent competetion. That way we got IWBH award in 2009,2010,2013,2014 and 2015. we are believing that we will got IWBH award in 2016 by our customers.</b></h3></p>
+	<?php
+	$host = "localhost";
+	$uname = "root";
+	$pwd = "";
+	$dbname = "mydb";
+
+	$conn = mysqli_connect($host,$uname,$pwd,$dbname);
+
+   if(!empty($_POST['file'])){
+	$s = "INSERT INTO marina(first_name,last_name,age,gender,contact_num,room_type) VALUE('$_POST[fn]','$_POST[ln]','$_POST[age]','$_POST[gen]','$_POST[cn]','$_POST[rt]')";
+	mysqli_query($conn,$s);
+	}
+	?>
+
+	<form action="<?php $_SERVER['PHP_SELF']?>" method="post">
+	<table>
+	<tr>
+	<td width="400" valign="top">
+		</br>
+		</br>
+		<a href="Form.php"><font color="white">New Online Booking</font></a></br>
+		<a href="Preview.php"><font color="white">Preview Existing Bookings</font></a>
+
+	</td>
+	<td>
+	
+			<?php
+	$host = "localhost";
+	$uname = "root";
+	$pwd = "";
+	$dbname = "mydb";
+
+	$conn = mysqli_connect($host,$uname,$pwd,$dbname);
+
+	$sql2 = "SELECT * FROM marina";
+	$res = mysqli_query($conn,$sql2);
+
+	echo "<table border = '1' bgcolor = 'white'>";
+	echo "<tr>";
+	echo "<th>First Namee</th><th>Last Name</th><th>Age</th><th>Gender</th><th>Contact Number</th><th>Room Type</th>";
+	echo "</tr>";
+
+	while($row = mysqli_fetch_array($res)){
+		echo "<tr>";
+		echo "<td>".$row['first_name']."</td><td>".$row['last_name']."</td><td>".$row['age']."</td><td>".$row['gender']."</td><td>".$row['contact_num']."</td><td>".$row['room_type']."</td>";
+		echo "</tr>";
+	}
+
+	echo "</table>";
+
+	?>
+
+	</td>
+	<td></td>
+	</tr>
+	</table>
+	</form>
+
 </body>
 </html>
